@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#641cc3">
+  <meta name="description" content="Monte seu pedido na Açaiteria Juazeiro. Cardápio completo, taxa por bairro, Pix e envio pelo WhatsApp.">
+  <title>Açaiteria Juazeiro | Cardápio e pedidos</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%23641cc3'/%3E%3Ccircle cx='32' cy='32' r='19' fill='%2365f05f'/%3E%3Ccircle cx='32' cy='32' r='11' fill='%23260b45'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+  <script src="config.js" defer></script>
+  <script src="order-utils.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#inicio" aria-label="Açaiteria Juazeiro, início">
+        <span class="brand-photo-wrap">
+          <img id="profilePhoto" class="brand-photo" src="img/perfil-acaiteria-demo.jpg" alt="Foto ilustrativa de perfil da açaiteria">
+          <span id="profileFallback" class="profile-fallback" aria-hidden="true">AJ</span>
+        </span>
+        <span class="brand-copy"><strong id="businessName">Açaiteria <b>Juazeiro</b></strong><small>Foto de perfil ilustrativa</small></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#cardapio">Cardápio</a><a href="#pedido">Monte seu pedido</a><a href="#fidelidade">Fidelidade</a>
+      </nav>
+      <a class="header-order" href="#pedido">Monte seu pedido <span aria-hidden="true">↓</span></a>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span> AÇAÍ E REFRESCÂNCIA NO SEU DIA</p>
+          <h1 id="hero-title">Seu momento<br>mais <em>cremoso.</em></h1>
+          <p class="hero-description">Escolha seus favoritos, informe seu bairro e confira o valor final antes de mandar o pedido. O cardápio inteiro fica disponível todos os dias.</p>
+          <div class="hero-actions"><a class="button button-primary" href="#cardapio">Ver cardápio <span aria-hidden="true">↓</span></a><span class="hero-note"><span class="note-check" aria-hidden="true">✓</span> Pedido direto pelo WhatsApp</span></div>
+          <div class="today-banner" aria-live="polite"><span class="today-icon" aria-hidden="true">★</span><span><small id="todayName">DESTAQUE DE HOJE</small><strong id="todaySummary">Carregando destaque…</strong></span></div>
+          <p class="discount-ribbon" id="discountRibbon" hidden>QUARTA-FEIRA: 10% DE DESCONTO NOS PRODUTOS</p>
+        </div>
+        <div class="hero-visual" aria-label="Ilustração de açaí com frutas">
+          <div class="hero-orbit orbit-back" aria-hidden="true"></div><div class="hero-orbit orbit-front" aria-hidden="true"></div>
+          <div class="hero-bowl" aria-hidden="true"><span class="bowl-cream"></span><span class="bowl-fruit fruit-one"></span><span class="bowl-fruit fruit-two"></span><span class="bowl-fruit fruit-three"></span><span class="bowl-leaf"></span></div>
+          <div class="hero-sticker sticker-green"><strong>peça do seu</strong><span>jeito</span></div>
+          <div class="hero-sticker sticker-cream"><span class="sticker-spark" aria-hidden="true">✳</span><strong>entrega</strong><span>por bairro</span></div>
+          <div class="hero-caption"><span>01</span> escolha, confira e peça</div>
+        </div>
+      </div>
+      <div class="hero-bottom container"><span><i>01</i> Escolha seus produtos</span><span><i>02</i> Informe o bairro</span><span><i>03</i> Confira o total e envie</span></div>
+    </section>
+
+    <section class="story-section section-pad" aria-labelledby="story-title">
+      <div class="container story-layout">
+        <div class="section-label"><span>01</span><span>QUEM SOMOS</span></div>
+        <div class="story-copy"><h2 id="story-title">A pausa gostosa<br>do seu dia.</h2><div><p>A Açaiteria Juazeiro é para quem gosta de escolher com calma e receber com praticidade. Monte seu pedido, veja a taxa do bairro e confira o valor final nesta mesma página.</p><p>Na quarta tem 10% de desconto nos produtos. Os destaques mudam durante a semana, mas nada fica bloqueado: você pode pedir qualquer item do cardápio.</p></div></div>
+      </div>
+    </section>
+
+    <section class="menu-section section-pad" id="cardapio" aria-labelledby="menu-title">
+      <div class="container">
+        <div class="menu-heading"><div><div class="section-label"><span>02</span><span>ESCOLHA O SEU</span></div><h2 id="menu-title">Cardápio <em>completo.</em></h2><p id="menuSubtitle" class="menu-subtitle" aria-live="polite">O destaque muda por dia, mas todos os produtos estão disponíveis.</p></div><div class="today-pill"><span class="pulse-dot" aria-hidden="true"></span><span id="todayPill">Hoje</span></div></div>
+        <div class="product-grid" id="productGrid" aria-live="polite"></div>
+        <p class="menu-footnote"><span aria-hidden="true">i</span> O destaque é apenas promocional; você pode adicionar qualquer produto ao pedido em qualquer dia.</p>
+      </div>
+    </section>
+
+    <section class="checkout-section section-pad" id="pedido" aria-labelledby="checkout-title">
+      <div class="container">
+        <div class="checkout-heading"><div class="section-label"><span>03</span><span>SEU PEDIDO</span></div><h2 id="checkout-title">Monte, confira<br>e <em>envie.</em></h2><p>O total inclui os produtos, o desconto de quarta (quando valer) e a taxa do bairro escolhido.</p></div>
+        <div class="checkout-grid">
+          <section class="order-panel" aria-labelledby="order-title">
+            <div class="order-panel-heading"><div><p class="product-kicker">SEU CARRINHO</p><h3 id="order-title">Seu pedido <span class="cart-count" id="cartCount">0</span></h3></div><span class="order-note">Resumo atualizado automaticamente</span></div>
+            <ul class="order-list" id="orderList" aria-live="polite"><li class="empty-cart">Escolha os produtos acima para começar.</li></ul>
+            <div class="totals-list" aria-live="polite">
+              <div><span>Subtotal dos produtos</span><strong id="itemsSubtotal">R$ 0,00</strong></div>
+              <div id="discountRow" hidden><span>Desconto de quarta-feira (10%)</span><strong id="discountAmount">−R$ 0,00</strong></div>
+              <div><span>Taxa de entrega</span><strong id="deliveryAmount">Selecione o bairro</strong></div>
+            </div>
+            <div class="cart-total"><span>Valor final</span><strong id="finalTotal">R$ 0,00</strong></div>
+            <p class="order-panel-note">A taxa de entrega varia conforme o bairro. O pedido só vai ao WhatsApp depois que você tocar no botão de envio.</p>
+          </section>
+
+          <form class="checkout-form" id="checkoutForm">
+            <section class="form-card" aria-labelledby="delivery-title">
+              <div class="form-card-heading"><span class="form-step">1</span><div><h3 id="delivery-title">Onde entregar?</h3><p>Preencha seus dados para a açaiteria confirmar o pedido.</p></div></div>
+              <div class="form-fields">
+                <label>Seu nome<input id="customerName" name="customerName" autocomplete="name" maxlength="80" required placeholder="Como podemos chamar você?"></label>
+                <label>Seu WhatsApp<input id="customerPhone" name="customerPhone" type="tel" inputmode="tel" autocomplete="tel" maxlength="22" required placeholder="(88) 9 0000-0000"></label>
+                <label class="field-full">Bairro<select id="neighborhood" name="neighborhood" required><option value="">Selecione seu bairro</option></select></label>
+                <label class="field-full">Rua e número<input id="customerAddress" name="customerAddress" autocomplete="street-address" maxlength="150" required placeholder="Rua, número e referência"></label>
+                <label class="field-full">Complemento <span class="optional-label">opcional</span><input id="customerComplement" name="customerComplement" maxlength="100" placeholder="Casa, apartamento ou ponto de referência"></label>
+                <label class="field-full">Observação do pedido <span class="optional-label">opcional</span><textarea id="customerNote" name="customerNote" rows="2" maxlength="240" placeholder="Algum detalhe para a equipe?"></textarea></label>
+              </div>
+            </section>
+
+            <section class="form-card payment-card" aria-labelledby="payment-title">
+              <div class="form-card-heading"><span class="form-step">2</span><div><h3 id="payment-title">Pagamento via Pix</h3><p>Use a chave ou QR Code da açaiteria. Confira os dados antes de pagar.</p></div></div>
+              <div class="pix-layout">
+                <div class="pix-qr-frame"><img id="pixQrImage" alt="QR Code Pix da Açaiteria Juazeiro" hidden><div id="pixQrPlaceholder" class="pix-placeholder"><span class="pix-symbol" aria-hidden="true">PIX</span><strong>QR Code Pix</strong><small>Adicione sua imagem real em <code>img/pix-qrcode.png</code></small><em>Área demonstrativa — ainda não recebe pagamento</em></div></div>
+                <div class="pix-key-area"><span class="pix-label">CHAVE PIX</span><strong id="pixKeyValue">Chave Pix ainda não configurada</strong><button type="button" id="copyPixKey" class="copy-pix" disabled>Copiar chave</button><p class="pix-caution">Configure a chave e o QR real no arquivo <code>config.js</code> antes de divulgar a página.</p></div>
+              </div>
+              <label class="proof-upload" for="paymentProof"><span class="upload-icon" aria-hidden="true">↑</span><span><strong>Anexar comprovante Pix</strong><small>Imagem ou PDF, até 8 MB. No celular, o arquivo pode ser compartilhado junto com o pedido.</small></span><input id="paymentProof" name="paymentProof" type="file" accept="image/jpeg,image/png,image/webp,application/pdf,.jpg,.jpeg,.png,.webp,.pdf"></label>
+              <div id="proofPreview" class="proof-preview" hidden><img id="proofImage" alt="Prévia do comprovante selecionado" hidden><span id="proofFileName"></span><button id="removeProof" type="button" aria-label="Remover comprovante">Remover</button></div>
+              <p class="proof-status" id="proofStatus" aria-live="polite">O comprovante não é salvo neste site. No compartilhamento nativo, escolha WhatsApp e envie para o número da açaiteria.</p>
+            </section>
+
+            <section class="loyalty-card" id="fidelidade" aria-labelledby="loyalty-title">
+              <div class="loyalty-copy"><p class="product-kicker">CARTÃO FIDELIDADE</p><h3 id="loyalty-title">Cada pedido vale 1 ponto</h3><p id="loyaltyStatus">Seus pontos aparecem nesta página enquanto ela estiver aberta.</p></div>
+              <div class="loyalty-progress"><div class="loyalty-stamps" id="loyaltyStamps" aria-label="Progresso do cartão fidelidade"></div><strong><span id="loyaltyCount">0</span> / <span id="loyaltyGoal">10</span></strong><small id="loyaltyRewardText">pontos para o brinde</small></div>
+              <p class="loyalty-note">Demonstração visual desta sessão: não há banco de dados e a página não consegue confirmar se a mensagem foi enviada ou se o pedido foi concluído.</p>
+            </section>
+
+            <p class="privacy-note">Ao enviar, seus dados do pedido e endereço serão incluídos na mensagem para a Açaiteria Juazeiro no WhatsApp. Este site não guarda o pedido nem o comprovante.</p>
+            <button class="button button-order send-order" id="finishOrder" type="submit" disabled>Enviar pedido pelo WhatsApp <span aria-hidden="true">↗</span></button>
+            <p class="send-help" id="sendStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="hours-section section-pad" aria-labelledby="hours-title">
+      <div class="container hours-layout"><div class="hours-intro"><div class="section-label section-label-light"><span>04</span><span>ROTAS DE ENTREGA</span></div><h2 id="hours-title">A gente combina<br>o melhor <em>horário.</em></h2><p>Pedidos organizados em dois períodos para você saber quando a rota sai.</p></div><div class="hours-cards" id="hoursCards"></div></div>
+    </section>
+
+    <section class="address-section section-pad" aria-labelledby="address-title"><div class="container address-layout"><div><div class="section-label"><span>05</span><span>ONDE ESTAMOS</span></div><h2 id="address-title">Pertinho de<br><em>você.</em></h2></div><div class="address-card"><span class="address-pin" aria-hidden="true">⌖</span><div><p class="product-kicker">ENDEREÇO</p><address id="businessAddress">Rua José Barbosa dos Santos, 211, Bairro Vila Fátima</address></div><span class="address-mark" aria-hidden="true">JUAZEIRO<br>CE</span></div></div></section>
+
+    <section class="closing-cta"><div class="container closing-inner"><div><p class="product-kicker">BATEU VONTADE?</p><h2>Seu açaí está<br>a uma mensagem.</h2></div><a class="button button-light" id="contactWhatsApp" href="https://wa.me/5588992182832" target="_blank" rel="noopener noreferrer">Tirar dúvida no WhatsApp <span aria-hidden="true">↗</span></a></div></section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-inner"><a class="footer-brand" href="#inicio">Açaiteria <b>Juazeiro</b></a><span>Pedidos pelo WhatsApp <span id="footerPhone">(88) 99218-2832</span></span><span>© <span id="currentYear">2026</span> Açaiteria Juazeiro</span></div></footer>
+  <a class="whatsapp-float" id="whatsappFloat" href="https://wa.me/5588992182832" target="_blank" rel="noopener noreferrer" aria-label="Tirar dúvidas pelo WhatsApp"><span aria-hidden="true">◔</span><span>WhatsApp</span></a>
+  <a class="sticky-cart" id="stickyCart" href="#pedido"><span>Monte seu pedido</span><strong id="stickyCartTotal">R$ 0,00</strong><span class="sticky-cart-count" id="stickyCartCount">0</span></a>
+</body>
+</html>

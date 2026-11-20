@@ -1,0 +1,29 @@
+AÇAITERIA JUAZEIRO — CARDÁPIO E PEDIDOS (HOMEPAGE ÚNICA)
+
+ARQUIVOS
+Mantenha index.html, styles.css, config.js, order-utils.js, script.js e a pasta img juntos. O projeto é estático, sem servidor, banco de dados ou bibliotecas externas. Descompacte a pasta e publique seus arquivos em Vercel ou outro host estático.
+
+PERSONALIZAÇÃO
+Edite config.js. Os comentários “EDITAR” apontam os campos da marca, telefone, foto do perfil, nomes e preços, fotos dos produtos, bairros e taxas, destaques diários, desconto de quarta, chave e QR Pix e pontos para o brinde.
+
+Os preços informados foram cadastrados em centavos: garrafa R$ 12,00; garrafa com Ovomaltine R$ 13,00; copo R$ 18,00; barca pequena R$ 20,00; média R$ 25,00; grande R$ 40,00. Como o preço real da batida de maracujá não foi informado, ela está com R$ 15,00 apenas como exemplo. Substitua esse valor em config.js antes de divulgar.
+
+IMAGENS
+Troque os arquivos mantendo os caminhos em config.js:
+- img/perfil-acaiteria-demo.jpg — foto ilustrativa do perfil/cabeçalho;
+- img/acai-garrafa-demo.jpg — açaí de garrafa;
+- img/acai-copo-demo.jpg — açaí no copo;
+- img/acai-barca-demo.jpg — barca;
+- img/batida-maracuja-demo.jpg — batida de maracujá.
+A foto demonstrativa foi gerada para este modelo. Substitua pela fotografia real da açaiteria, se desejar.
+
+PIX E COMPROVANTE
+Substitua INSIRA_SUA_CHAVE_PIX_AQUI por uma chave real, coloque o QR Code verdadeiro em img/pix-qrcode.png e defina qrCodeImage: "img/pix-qrcode.png" em config.js. O QR mostrado antes disso é apenas uma indicação visual e não pode receber pagamento. Não divulgue nem tente pagar pelo placeholder.
+
+O navegador não permite que um site estático anexe automaticamente um arquivo a um link wa.me. Em celular/navegadores com Web Share API e compartilhamento de arquivos, o botão abre o menu nativo de compartilhamento com o resumo e o comprovante; a pessoa escolhe WhatsApp, confirma o destinatário e toca em enviar. Em navegadores sem esse recurso, o site abre a conversa direta com o resumo e pede que a pessoa anexe o comprovante manualmente. O arquivo não é carregado nem armazenado pelo site.
+
+FIDELIDADE
+Os pontos ficam apenas em memória enquanto a página está aberta; não há banco nem persistência. O modelo soma um ponto quando o cliente inicia o encaminhamento do pedido. O site não consegue saber se a mensagem foi enviada ou se o pedido foi concluído. Ajuste rewardAfterPoints em config.js ao número de pontos que a açaiteria deseja para o brinde.
+
+DESTAQUE E DESCONTO
+Altere dailyHighlights no config.js para escolher o produto em destaque de domingo a sábado (índices 0–6). A quarta-feira aplica automaticamente 10% ao subtotal dos produtos; a taxa de entrega não recebe desconto. Nenhum item é bloqueado por estar fora do destaque.

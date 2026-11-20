@@ -1,0 +1,9 @@
+{
+  "name": "acaiteria-juazeiro-pedidos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Homepage estática de cardápio e pedidos da Açaiteria Juazeiro",
+  "scripts": {
+    "check": "node --check config.js && node --check order-utils.js && node --check script.js && node --test test/*.test.js"
+  }
+}

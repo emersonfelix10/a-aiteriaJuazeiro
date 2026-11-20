@@ -1,0 +1,13 @@
+IMAGENS DE EXEMPLO — AÇAITERIA JUAZEIRO
+
+As cinco fotos incluídas são imagens fictícias geradas para servir como exemplos visuais do modelo; não representam produtos reais nem a loja. Substitua os assets pelas fotografias reais da Açaiteria Juazeiro antes de divulgar, se preferir.
+
+Caminhos configurados em config.js:
+- img/perfil-acaiteria-demo.jpg — perfil/cabeçalho;
+- img/acai-garrafa-demo.jpg — garrafa;
+- img/acai-copo-demo.jpg — copo;
+- img/acai-barca-demo.jpg — barca;
+- img/batida-maracuja-demo.jpg — batida de maracujá.
+
+Pix:
+- img/pix-qrcode.png ainda não existe. Quando inserir a imagem QR real, defina `qrCodeImage: "img/pix-qrcode.png"` no arquivo config.js. A área placeholder incluída no site não é um código Pix e não deve ser escaneada.
